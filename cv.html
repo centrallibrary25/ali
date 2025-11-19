@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علي الموسوي - سيرة ذاتية </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d8b68;
+            --secondary-color: #1a5e7f;
+            --accent-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #1e3a2c;
+            --text-color: #2c3e50;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --islamic-pattern: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%230d8b68" fill-opacity="0.05" d="M50,10 C60,10 70,15 77,22 C84,29 89,39 89,50 C89,61 84,71 77,78 C70,85 60,90 50,90 C40,90 30,85 23,78 C16,71 11,61 11,50 C11,39 16,29 23,22 C30,15 40,10 50,10 Z M50,30 C57,30 63,33 67,37 C71,41 74,47 74,54 C74,61 71,67 67,71 C63,75 57,78 50,78 C43,78 37,75 33,71 C29,67 26,61 26,54 C26,47 29,41 33,37 C37,33 43,30 50,30 Z"/></svg>');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: var(--islamic-pattern);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* الشريط الجانبي */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img::before {
+            content: '\f007';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+
+        .profile-img::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info {
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* المحتوى الرئيسي */
+        .main-content {
+            margin-right: 300px;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 1.5rem;
+            box-shadow: 0 5px 15px rgba(13, 139, 104, 0.3);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* البطاقات */
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .about-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(13, 139, 104, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .about-item:hover {
+            background: rgba(13, 139, 104, 0.1);
+            transform: translateX(5px);
+        }
+
+        .about-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* المهارات */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(13, 139, 104, 0.1);
+            font-size: 1.3rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* الجدول الزمني */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            right: 0;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 1.8rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            transform: rotate(45deg);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -10px;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 4px 10px rgba(13, 139, 104, 0.3);
+        }
+
+        /* الشهادات */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .certificate-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-radius: 15px;
+            background: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-item::before {
+            content: '\f0a3';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 6rem;
+            color: rgba(13, 139, 104, 0.05);
+            z-index: 0;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* تأثيرات إسلامية */
+        .islamic-decoration {
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(13, 139, 104, 0.03);
+            z-index: -1;
+        }
+
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(15deg);
+        }
+
+        .decoration-2 {
+            bottom: 10%;
+            right: 5%;
+            transform: rotate(-15deg);
+        }
+
+        /* تأثيرات النص العربي */
+        .arabic-text {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.8;
+        }
+
+        /* التذييل */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffffff" fill-opacity="0.05" d="M50,10 C60,10 70,15 77,22 C84,29 89,39 89,50 C89,61 84,71 77,78 C70,85 60,90 50,90 C40,90 30,85 23,78 C16,71 11,61 11,50 C11,39 16,29 23,22 C30,15 40,10 50,10 Z M50,30 C57,30 63,33 67,37 C71,41 74,47 74,54 C74,61 71,67 67,71 C63,75 57,78 50,78 C43,78 37,75 33,71 C29,67 26,61 26,54 C26,47 29,41 33,37 C37,33 43,30 50,30 Z"/></svg>');
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 1100px) {
+            .sidebar {
+                width: 250px;
+            }
+            .main-content {
+                margin-right: 250px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            .main-content {
+                margin-right: 0;
+            }
+            .timeline::before {
+                right: 30px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px;
+                padding-left: 0;
+            }
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -10px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-grid,
+            .skills-container,
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar">
+        <div class="profile-img"></div>
+        <h1>علي الموسوي</h1>
+        <h2>تكنولوجيا المعلومات الاعمال</h2>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div>
+                    <h4 style="text-align: right;">الاسم الكامل</h4>
+                    <p>علي عماد إسماعيل محمود العوادي</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-birthday-cake"></i>
+                </div>
+                <div>
+                    <h4>تاريخ الميلاد</h4>
+                    <p>1995/12/6 - بغداد</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                    <h4>الحالة الاجتماعية</h4>
+                    <p>متزوج - طفل واحد</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://t.me/aliit9" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.facebook.com/ali.emad.90" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ali.Emad.95" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main-content">
+        <!-- الزخارف الإسلامية -->
+        <div class="islamic-decoration decoration-1">
+            <i class="fas fa-star-and-crescent"></i>
+        </div>
+        <div class="islamic-decoration decoration-2">
+            <i class="fas fa-mosque"></i>
+        </div>
+        
+        <!-- قسم النبذة الشخصية -->
+        <section id="about">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="section-title">نبذة عني</h2>
+            </div>
+            <div class="card">
+                <div class="about-grid">
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h4>التعليم</h4>
+                            <p>بكالوريوس في تكنولوجيا المعلومات الاعمال</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h4>الخبرة</h4>
+                            <p>أكثر من 8 سنوات في مجال تكنولوجيا المعلومات وادارة المكتبة الالكترونية في جامعة العميد</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div>
+                            <h4>اللغات</h4>
+                            <p>العربية (اللغة الأم)، الإنجليزية (متوسطة)</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>الموقع</h4>
+                            <p>كربلاء المقدسة - حولي مستشفى الكفيل - العراق</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التعليم -->
+        <section id="education">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2 class="section-title">المؤهلات العلمية</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2017 - 2018</span>
+                        <h3>جامعة تكنولوجيا المعلومات والاتصالات</h3>
+                        <p>كلية معلوماتية الاعمال</p>
+                        <p>تخصص: تكنولوجيا المعلومات الاعمال</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الخبرات -->
+        <section id="experience">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2 class="section-title">الخبرات المهنية</h2>
+            </div>
+            <div class="card">
+                <ul class="arabic-text" style="list-style-type: none; padding-right: 1rem;">
+                    <li style="margin-bottom: 1.2rem; position: relative; padding-right: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; right: 0; top: 0.3rem;"></i>
+                        إدارة وتطوير أنظمة الحاسوب
+                    </li>
+                    <li style="margin-bottom: 1.2rem; position: relative; padding-right: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; right: 0; top: 0.3rem;"></i>
+                        صيانة وتنصيب الحواسيب والبرامج وإجراء عمليات الفرمتة لأنظمة التشغيل
+                    </li>
+                    <li style="margin-bottom: 1.2rem; position: relative; padding-right: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; right: 0; top: 0.3rem;"></i>
+                        برمجة وتطوير مواقع إلكترونية خدمية خاصة بالمكتبة وغيرها من المواقع
+                    </li>
+                    <li style="margin-bottom: 1.2rem; position: relative; padding-right: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; right: 0; top: 0.3rem;"></i>
+                          الإشراف على قواعد البيانات وإدارة الاشتراكات الإلكترونية التي تخدم الطلبة والباحثين.
+                    </li>
+                    <li style="margin-bottom: 1.2rem; position: relative; padding-right: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; right: 0; top: 0.3rem;"></i>
+                        إعداد وتشغيل المؤشرات وفق معايير الجودة المعتمدة في الجامعة.
+                    </li>
+                    <li style="margin-bottom: 1.2rem; position: relative; padding-right: 2rem;">
+                        <i class="fas fa-check-circle" style="color: var(--accent-color); position: absolute; right: 0; top: 0.3rem;"></i>
+                        دعم الموظفين والطلبة في حل المشكلات التقنية اليومية وعمل دورات سريعة لهم
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- قسم المهارات -->
+        <section id="skills">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h2 class="section-title">المهارات</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category card">
+                    <h4>المهارات التقنية</h4>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>CSS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PHP</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SQL Database</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category card">
+                    <h4>المهارات الشخصية</h4>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>تصميم الجرافيك</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>العرض التقديمي</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>التخطيط</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>العمل مع فريق</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>التحرير القوتوغرافي</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الشهادات -->
+        <section id="certificates">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h2 class="section-title">الشهادات والإنجازات</h2>
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate-item card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h4>شهادة في عرض مشاريع</h4>
+                    <p>شركة بوابة القمر لتقنيات المعلومات والاتصالات</p>
+                </div>
+                <div class="certificate-item card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <h4>مايكروسوفت أوفيس وورد</h4>
+                    <p>شهادة احترافية</p>
+                </div>
+                <div class="certificate-item card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h4>مايكروسوفت أوفيس إكسل</h4>
+                    <p>شهادة احترافية</p>
+                </div>
+                <div class="certificate-item card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4>دورة الصحة والسلامة المهنية</h4>
+                    <p>شهادة تدريبية</p>
+                </div>
+                <div class="certificate-item card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h4>سلامة اللغة العربية وأسلوب المخاطبات الرسمية</h4>
+                    <p>شهادة تدريبية</p>
+                </div>
+                <div class="certificate-item card">
+                    <div class="certificate-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>برنامج تطوير وتأهيل قدرات القيادة الجامعية والموارد البشرية</h4>
+                    <p>شهادة تدريبية</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container footer-content">
+            <h3>علي العوادي</h3>
+            <p>مطور ومتخصص في تكنولوجيا المعلومات الاعمال</p>
+            <div class="footer-links">
+                <a href="https://t.me/aliit9" target="_blank"><i class="fab fa-telegram"></i> تيليجرام</a>
+                <a href="https://www.facebook.com/ali.emad.90" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a>
+                <a href="https://www.instagram.com/ali.Emad.95" target="_blank"><i class="fab fa-instagram"></i> إنستغرام</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.7;">© 2024 ALI EMAD</p>
+        </div>
+    </footer>
+
+    <script>
+        // تحريك أشرطة المهارات عند التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 300);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+            
+            // إضافة تأثيرات عند التمرير للبطاقات
+            const cards = document.querySelectorAll('.card');
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                cardObserver.observe(card);
+            });
+
+            // تأثيرات عشوائية للعناصر الإسلامية
+            const decorations = document.querySelectorAll('.islamic-decoration');
+            decorations.forEach(decoration => {
+                decoration.style.animation = `float 6s ease-in-out infinite`;
+            });
+
+            // إضافة CSS للطفو
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translateY(0) rotate(15deg); }
+                    50% { transform: translateY(-20px) rotate(15deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
